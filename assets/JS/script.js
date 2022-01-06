@@ -47,5 +47,7 @@ finally the code should randomly grab items from the corresponding arrays in the
 
 /* end code for random array info grab */
 
+/* make a for loop for grabbing however many of each item the user requests? */
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
