@@ -15,7 +15,7 @@ function writePassword() {
 /* CONST OR LET ASK ANDRES */
 
 let lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-document.getElementById("password").innerHTML = lowerLetters;
+/* document.getElementById("password").innerHTML = lowerLetters; */
 
 let capitalLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
@@ -24,6 +24,18 @@ let digits = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 let symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "?"];
 
 /* end arrays for the password */
+
+/* begin grabbing items from the arrays */
+
+var randomLower = lowerLetters[Math.floor(Math.random()*lowerLetters.length)];
+
+var randomCapital = capitalLetters[Math.floor(Math.random()*capitalLetters.length)];
+
+var randomDigits = digits[Math.floor(Math.random()*digits.length)];
+
+var randomSymbols = symbols[Math.floor()*symbols.length];
+
+/* end grabbing items from array */
 
 /* Begin code for user input to grab randon data from each array */
 
