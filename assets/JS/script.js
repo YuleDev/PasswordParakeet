@@ -39,6 +39,12 @@ var randomSymbols = symbols[Math.floor()*symbols.length];
 
 /* Begin code for user input to grab randon data from each array */
 
+/* a prompt should appear that asks the user how many lower case letter they want
+then another for how many uppercase letters they want
+then another for how many numerals
+then another for how many special characters
+finally the code should randomly grab items from the corresponding arrays in the quantity specified and display it */
+
 let sign = prompt("how many symbols do you want?");
 if (number between 1-9) {
   grab however many symbols requested
@@ -47,12 +53,6 @@ else if (more than 9 numbers requested) {
   prompt("too many symbols requested, you wont remember all those! try again.")
   then reset and ask again
 }
-
-/* a prompt should appear that asks the user how many lower case letter they want
-then another for how many uppercase letters they want
-then another for how many numerals
-then another for how many special characters
-finally the code should randomly grab items from the corresponding arrays in the quantity specified and display it */
 
 /* end code for random array info grab */
 
