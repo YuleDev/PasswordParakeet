@@ -14,7 +14,7 @@ function writePassword() {
 
 /* CONST OR LET ASK ANDRES */
 
-let lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 /* document.getElementById("password").innerHTML = lowerLetters; */
 
 let capitalLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -24,6 +24,35 @@ let digits = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 let symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "?"];
 
 /* end arrays for the password */
+
+
+function generatePassword() {
+  const charaLength = prompt("How characters many?");
+
+  var confirmLower = confirm("Would you like to include Lower case chars?")
+  var confirmUpper = confirm("Would you like to include Upper case chars?")
+
+  var totalPossibilities = [];
+  if(confirmLower){
+    totalPossibilities = totalPossibilities.concat(lowerLetters)
+  }
+  if(confirmUpper){
+    totalPossibilities = totalPossibilities.concat(capitalLetters)
+  }
+
+  console.log(totalPossibilities)
+
+  var generatedPass = ""
+
+  for(i=0; i<charaLength; i++){ 
+    var randomIndex = Math.floor(Math.random() * totalPossibilities.length)
+    var randomChar = totalPossibilities[randomIndex]
+    generatedPass += randomChar;
+    console.log(randomChar)
+  }
+
+  return generatedPass
+}
 
 /* begin grabbing items from the arrays */
 
@@ -45,14 +74,14 @@ then another for how many numerals
 then another for how many special characters
 finally the code should randomly grab items from the corresponding arrays in the quantity specified and display it */
 
-let sign = prompt("how many symbols do you want?");
-if (number between 1-9) {
-  grab however many symbols requested
-}
-else if (more than 9 numbers requested) {
-  prompt("too many symbols requested, you wont remember all those! try again.")
-  then reset and ask again
-}
+// let sign = prompt("how many symbols do you want?");
+// if (number between 1-9) {
+//   grab however many symbols requested
+// }
+// else if (more than 9 numbers requested) {
+//   prompt("too many symbols requested, you wont remember all those! try again.")
+//   then reset and ask again
+// }
 
 /* end code for random array info grab */
 
