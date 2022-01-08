@@ -30,19 +30,15 @@ function generatePassword() {
     alert("Input a number between 8-128. Please try again.")
     return "Your Secure Password";
   }
-  if(charaLength < 8) {
-    alert("Input a number between 8-128. Please try again.")
-    return "Your Secure Password";
-  }
-  if(charaLength > 128) {
+  if(charaLength < 8 || charaLength > 128) {
     alert("Input a number between 8-128. Please try again.")
     return "Your Secure Password";
   }
 
-  var confirmLower = confirm("Would you like to include lower case characters?")
-  var confirmUpper = confirm("Would you like to include upper case characters?")
-  var confirmDigits = confirm("Woudl you like to include numerals?")
-  var confirmSymbols = confirm("Would you like to include symbols?")
+  var confirmLower = confirm("Would you like to include lower-case characters?")
+  var confirmUpper = confirm("Would you like to include UPPER-CASE characters?")
+  var confirmDigits = confirm("Woudl you like to include numerals? Such as 123")
+  var confirmSymbols = confirm("Would you like to include symbols? Such as !@#")
 
   var totalPossibilities = [];
   if(confirmLower) {
