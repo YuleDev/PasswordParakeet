@@ -35,9 +35,11 @@ function generatePassword() {
     return "Your Secure Password";
   }
 
+ /*  else statement for cancel to end function? */
+
   var confirmLower = confirm("Would you like to include lower-case characters?")
   var confirmUpper = confirm("Would you like to include UPPER-CASE characters?")
-  var confirmDigits = confirm("Woudl you like to include numerals? Such as '123'.")
+  var confirmDigits = confirm("Would you like to include numerals? Such as '123'.")
   var confirmSymbols = confirm("Would you like to include symbols? Such as '!@#'.")
 
   var totalPossibilities = [];
