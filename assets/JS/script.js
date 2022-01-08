@@ -5,8 +5,11 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  passwordText.value="";
+console.log(password);
+if (password) {
   passwordText.value = password;
+  }
 }
 
 /* begin some arrays for the password */
@@ -28,11 +31,11 @@ function generatePassword() {
   const charaLength = prompt("How many characters do you desire? Please pick a number between 8-128");
   if(charaLength=="") {
     alert("Input a number between 8-128. Please try again.")
-    return "Your Secure Password";
+    prompt("Please input the number of characters you desire.");
   }
   if(charaLength < 8 || charaLength > 128) {
     alert("Input a number between 8-128. Please try again.")
-    return "Your Secure Password";
+    return 
   }
 
  /*  else statement for cancel to end function? */
@@ -57,20 +60,20 @@ function generatePassword() {
   }
   if(confirmLower=="" && confirmUpper=="" && confirmDigits=="" && confirmSymbols=="") {
     alert("You need some characters for a password silly!")
-    return "Your Secure Password";
+    return
   }
 
   /* if all things false alert pickone  */
 
   var generatedPass = ""
-
+console.log("before the for loop", generatedPass);
   for(i=0; i<charaLength; i++){ 
     var randomIndex = Math.floor(Math.random() * totalPossibilities.length)
     var randomChar = totalPossibilities[randomIndex]
     generatedPass += randomChar;
     console.log(randomChar)
   }
-
+console.log("after the for loop",generatedPass);
   return generatedPass
 }
 
