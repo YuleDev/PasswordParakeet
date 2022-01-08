@@ -6,10 +6,12 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value="";
-console.log(password);
 if (password) {
   passwordText.value = password;
   }
+if (passwordText.value < 8 || passwordText.value > 128) {
+  passwordText.value = password;
+}
 }
 
 /* begin some arrays for the password */
@@ -35,10 +37,9 @@ function generatePassword() {
   }
   if(charaLength < 8 || charaLength > 128) {
     alert("Input a number between 8-128. Please try again.")
-    return 
+    prompt("How many characters do you desire? Please pick a number between 8-128");
+    return null;
   }
-
- /*  else statement for cancel to end function? */
 
   var confirmLower = confirm("Would you like to include lower-case characters?")
   var confirmUpper = confirm("Would you like to include UPPER-CASE characters?")
@@ -62,8 +63,6 @@ function generatePassword() {
     alert("You need some characters for a password silly!")
     return
   }
-
-  /* if all things false alert pickone  */
 
   var generatedPass = ""
 console.log("before the for loop", generatedPass);
@@ -90,8 +89,6 @@ var randomDigits = digits[Math.floor(Math.random()*digits.length)];
 var randomSymbols = symbols[Math.floor()*symbols.length];
 
 /* end math */
-
-/* ?make a for loop for grabbing however many of each item the user requests? */
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
