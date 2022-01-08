@@ -24,7 +24,20 @@ const symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "?"];
 /* begin functions */
 
 function generatePassword() {
+
   const charaLength = prompt("How many characters do you desire? Please pick a number between 8-128");
+  if(charaLength=="") {
+    alert("Input a number between 8-128. Please try again.")
+    return "Your Secure Password";
+  }
+  if(charaLength < 8) {
+    alert("Input a number between 8-128. Please try again.")
+    return "Your Secure Password";
+  }
+  if(charaLength > 128) {
+    alert("Input a number between 8-128. Please try again.")
+    return "Your Secure Password";
+  }
 
   var confirmLower = confirm("Would you like to include lower case characters?")
   var confirmUpper = confirm("Would you like to include upper case characters?")
@@ -44,14 +57,12 @@ function generatePassword() {
   if(confirmSymbols) {
     totalPossibilities = totalPossibilities.concat(symbols)
   }
-
-  /* FOCUS BELOW. RESTART BEFORE FURTHER QUESTIONS ARE ASKED
-  ALSO ADD LOGIC FOR IF NO IS ANSWERED EVERYTIME SO-AS TO REMOVE UNDEFINED */
-  if(charaLength=="") {
-    alert("Please input a number between 8-128")
-    console.log(charaLength=="");
+  if(confirmLower=="" && confirmUpper=="" && confirmDigits=="" && confirmSymbols=="") {
+    alert("You need some characters for a password silly!")
     return "Your Secure Password";
   }
+
+  /* if all things false alert pickone  */
 
   var generatedPass = ""
 
