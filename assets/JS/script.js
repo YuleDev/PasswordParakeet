@@ -7,40 +7,51 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 /* begin some arrays for the password */
 
-/* CONST OR LET ASK ANDRES */
-
 const lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-/* document.getElementById("password").innerHTML = lowerLetters; */
 
-let capitalLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+const capitalLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-let digits = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+const digits = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
-let symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "?"];
+const symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "?"];
 
 /* end arrays for the password */
 
+/* begin functions */
 
 function generatePassword() {
-  const charaLength = prompt("How characters many?");
+  const charaLength = prompt("How many characters do you desire? Please pick a number between 8-128");
 
-  var confirmLower = confirm("Would you like to include Lower case chars?")
-  var confirmUpper = confirm("Would you like to include Upper case chars?")
+  var confirmLower = confirm("Would you like to include lower case characters?")
+  var confirmUpper = confirm("Would you like to include upper case characters?")
+  var confirmDigits = confirm("Woudl you like to include numerals?")
+  var confirmSymbols = confirm("Would you like to include symbols?")
 
   var totalPossibilities = [];
-  if(confirmLower){
+  if(confirmLower) {
     totalPossibilities = totalPossibilities.concat(lowerLetters)
   }
-  if(confirmUpper){
+  if(confirmUpper) {
     totalPossibilities = totalPossibilities.concat(capitalLetters)
   }
+  if(confirmDigits) {
+    totalPossibilities = totalPossibilities.concat(digits)
+  }
+  if(confirmSymbols) {
+    totalPossibilities = totalPossibilities.concat(symbols)
+  }
 
-  console.log(totalPossibilities)
+  /* FOCUS BELOW. RESTART BEFORE FURTHER QUESTIONS ARE ASKED
+  ALSO ADD LOGIC FOR IF NO IS ANSWERED EVERYTIME SO-AS TO REMOVE UNDEFINED */
+  if(charaLength=="") {
+    alert("Please input a number between 8-128")
+    console.log(charaLength=="");
+    return "Your Secure Password";
+  }
 
   var generatedPass = ""
 
@@ -54,7 +65,9 @@ function generatePassword() {
   return generatedPass
 }
 
-/* begin grabbing items from the arrays */
+/* end functions */
+
+/* begin math */
 
 var randomLower = lowerLetters[Math.floor(Math.random()*lowerLetters.length)];
 
@@ -64,28 +77,9 @@ var randomDigits = digits[Math.floor(Math.random()*digits.length)];
 
 var randomSymbols = symbols[Math.floor()*symbols.length];
 
-/* end grabbing items from array */
+/* end math */
 
-/* Begin code for user input to grab randon data from each array */
-
-/* a prompt should appear that asks the user how many lower case letter they want
-then another for how many uppercase letters they want
-then another for how many numerals
-then another for how many special characters
-finally the code should randomly grab items from the corresponding arrays in the quantity specified and display it */
-
-// let sign = prompt("how many symbols do you want?");
-// if (number between 1-9) {
-//   grab however many symbols requested
-// }
-// else if (more than 9 numbers requested) {
-//   prompt("too many symbols requested, you wont remember all those! try again.")
-//   then reset and ask again
-// }
-
-/* end code for random array info grab */
-
-/* make a for loop for grabbing however many of each item the user requests? */
+/* ?make a for loop for grabbing however many of each item the user requests? */
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
