@@ -8,3 +8,4 @@ https://thatblondetitan.github.io/PasswordParakeet/
 
 (./assets/images/PasswordParakeet.png)
 
+<img width="496" alt="PasswordParakeet" src="https://user-images.githubusercontent.com/95316362/148652754-2fdf45bb-0787-458f-8746-175af1c81b50.PNG">
